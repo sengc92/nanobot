@@ -1,4 +1,5 @@
 import axios from 'axios';
+import 'dotenv/config';
 import readline from 'readline';
 
 const rl = readline.createInterface({
@@ -27,7 +28,7 @@ async function chatAPI(prompt) {
                 {
                     headers: {
                         "Content-Type": "application/json",
-                        "Authorization": "Bearer YOUR_SILICONFLOW_API_KEY"
+                        "Authorization": `Bearer ${process.env.SILICONFLOW_API_KEY}`
                     }
                 }
             );

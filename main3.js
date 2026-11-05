@@ -1,4 +1,5 @@
 import axios from 'axios';
+import 'dotenv/config';
 import readline from 'readline';
 import { execSync } from 'child_process';
 
@@ -53,7 +54,7 @@ Keep outputs short and clean.`
       {
         headers: {
           "Content-Type": "application/json",
-          "Authorization": "Bearer YOUR_SILICONFLOW_API_KEY"
+          "Authorization": `Bearer ${process.env.SILICONFLOW_API_KEY}`
         }
       }
     );
